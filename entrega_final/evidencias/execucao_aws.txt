@@ -1,0 +1,46 @@
+=== Estrutura final do bucket S3 ===
+        99 bytes  athena-results/03a38166-f71f-463a-ba9f-952d7591e3e4.csv  (2026-09-25 00:38:07+00:00)
+       124 bytes  athena-results/03a38166-f71f-463a-ba9f-952d7591e3e4.csv.metadata  (2026-09-25 00:38:07+00:00)
+        63 bytes  athena-results/38cbfa15-2a44-49f0-a0b2-4cbd237b6251.csv  (2026-09-25 00:38:04+00:00)
+       109 bytes  athena-results/38cbfa15-2a44-49f0-a0b2-4cbd237b6251.csv.metadata  (2026-09-25 00:38:04+00:00)
+        80 bytes  athena-results/77a0dcc6-fb95-40da-814b-1d2ea26b65fa.csv  (2026-09-25 00:38:16+00:00)
+       178 bytes  athena-results/77a0dcc6-fb95-40da-814b-1d2ea26b65fa.csv.metadata  (2026-09-25 00:38:16+00:00)
+       778 bytes  athena-results/a33d2069-7939-4fa4-9f4e-13a84e776181.csv  (2026-09-25 00:38:11+00:00)
+       113 bytes  athena-results/a33d2069-7939-4fa4-9f4e-13a84e776181.csv.metadata  (2026-09-25 00:38:11+00:00)
+       338 bytes  athena-results/b8a91dc1-623d-4d06-bfd9-05fa68b2891f.csv  (2026-09-25 00:38:09+00:00)
+       181 bytes  athena-results/b8a91dc1-623d-4d06-bfd9-05fa68b2891f.csv.metadata  (2026-09-25 00:38:09+00:00)
+       161 bytes  athena-results/c6319264-e747-4e2a-abc5-e7a2f702283a.csv  (2026-09-25 00:38:14+00:00)
+       417 bytes  athena-results/c6319264-e747-4e2a-abc5-e7a2f702283a.csv.metadata  (2026-09-25 00:38:14+00:00)
+      4213 bytes  glue-scripts/etl_vendas_varejo05.py  (2026-09-25 00:34:35+00:00)
+         0 bytes  predictions/  (2026-09-25 00:31:27+00:00)
+     53238 bytes  predictions/previsoes.csv  (2026-09-25 00:58:12+00:00)
+         0 bytes  processed/  (2026-09-25 00:31:27+00:00)
+    152337 bytes  processed/vendas/part-00000-3087c3aa-9ca7-4859-8d40-481dc8d86e0c-c000.snappy.parquet  (2026-09-25 00:36:18+00:00)
+    153168 bytes  processed/vendas/part-00001-3087c3aa-9ca7-4859-8d40-481dc8d86e0c-c000.snappy.parquet  (2026-09-25 00:36:18+00:00)
+    152351 bytes  processed/vendas/part-00002-3087c3aa-9ca7-4859-8d40-481dc8d86e0c-c000.snappy.parquet  (2026-09-25 00:36:18+00:00)
+    154983 bytes  processed/vendas/part-00003-3087c3aa-9ca7-4859-8d40-481dc8d86e0c-c000.snappy.parquet  (2026-09-25 00:36:18+00:00)
+      1741 bytes  raw/LEIA-ME.md  (2026-09-25 00:31:27+00:00)
+   1072283 bytes  raw/historico/vendas_2024.csv  (2026-09-25 00:31:06+00:00)
+   1068994 bytes  raw/historico/vendas_2025.csv  (2026-09-25 00:31:08+00:00)
+   1068148 bytes  raw/historico/vendas_2026.csv  (2026-09-25 00:31:17+00:00)
+     79036 bytes  raw/inferencia/dados_inferencia.csv  (2026-09-25 00:31:26+00:00)
+
+=== Job Glue etl-vendas-varejo05 ===
+RunId=jr_ce6bb86360cbd660449fe139c92ee96401cc465021ce0fe61b11480b85214804 state=SUCCEEDED started=2026-09-24 21:34:44.196000-03:00 completed=2026-09-24 21:36:28.977000-03:00
+Log: linhas_entrada=44278 linhas_saida=43840 duplicatas_removidas=438
+
+=== Crawler processed-vendas-varejo05-crawler ===
+State=READY LastCrawl={'Status': 'SUCCEEDED', 'LogGroup': '/aws-glue/crawlers', 'LogStream': 'processed-vendas-varejo05-crawler', 'MessagePrefix': '91cbfff6-4be0-44e3-aa47-7fb5281cf462', 'StartTime': datetime.datetime(2026, 9, 24, 21, 37, tzinfo=tzlocal())}
+
+=== Tabela Glue Data Catalog: varejo05_db.vendas ===
+  dataset_id: string
+  data: date
+  loja: string
+  produto: string
+  categoria: string
+  preco: double
+  promocao: int
+  estoque: double
+  quantidade_vendida: int
+  temperatura_prevista: double
+  receita_final: double

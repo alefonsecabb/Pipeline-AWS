@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Pipeline varejo05" id="pipeline-varejo05">
+    <mxGraphModel dx="1200" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Grupo AWS Cloud -->
+        <mxCell id="cloud" value="AWS Cloud (us-east-1)" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=13;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="980" height="1060" as="geometry" />
+        </mxCell>
+
+        <!-- Arquivos locais CSV -->
+        <mxCell id="csv" value="&lt;b&gt;Arquivos locais CSV&lt;/b&gt;" style="shape=note;whiteSpace=wrap;html=1;size=16;fillColor=#F5F5F5;strokeColor=#545B64;fontColor=#232F3E;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="409" y="40" width="60" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- S3 raw -->
+        <mxCell id="s3raw" value="&lt;b&gt;Amazon S3&lt;/b&gt;&lt;br&gt;raw/historico/&lt;br&gt;raw/inferencia/" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="240" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- Glue Job -->
+        <mxCell id="gluejob" value="&lt;b&gt;AWS Glue Job&lt;/b&gt;&lt;br&gt;etl-vendas-varejo05" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- S3 processed -->
+        <mxCell id="s3proc" value="&lt;b&gt;Amazon S3&lt;/b&gt;&lt;br&gt;processed/vendas/&lt;br&gt;(Parquet)" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="800" y="400" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- Glue Crawler -->
+        <mxCell id="crawler" value="&lt;b&gt;AWS Glue Crawler&lt;/b&gt;&lt;br&gt;processed-vendas-varejo05-crawler" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=none;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.glue_crawlers;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="570" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- Glue Data Catalog -->
+        <mxCell id="catalog" value="&lt;b&gt;AWS Glue Data Catalog&lt;/b&gt;&lt;br&gt;varejo05_db.vendas" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.glue_data_catalog;" vertex="1" parent="1">
+          <mxGeometry x="800" y="570" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- Athena -->
+        <mxCell id="athena" value="&lt;b&gt;Amazon Athena&lt;/b&gt;&lt;br&gt;consultas SQL" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.athena;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="740" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- SageMaker -->
+        <mxCell id="sagemaker" value="&lt;b&gt;Amazon SageMaker Notebook&lt;/b&gt;&lt;br&gt;varejo05-referencia&lt;br&gt;&lt;i&gt;feature engineering, treino,&lt;br&gt;avaliação, inferência sobre&lt;br&gt;dados_inferencia.csv&lt;/i&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="910" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- S3 predictions -->
+        <mxCell id="s3pred" value="&lt;b&gt;Amazon S3&lt;/b&gt;&lt;br&gt;predictions/previsoes.csv" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;html=1;fontSize=13;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;spacingRight=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1080" width="78" height="78" as="geometry" />
+        </mxCell>
+
+        <!-- Setas -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="csv" target="s3raw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="s3raw" target="gluejob">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="limpeza / consolidação" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;fontSize=12;fontColor=#232F3E;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="gluejob" target="s3proc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="gluejob" target="crawler">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="crawler" target="catalog">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="crawler" target="athena">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="athena" target="sagemaker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;strokeColor=#545B64;strokeWidth=2;" edge="1" parent="1" source="sagemaker" target="s3pred">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
