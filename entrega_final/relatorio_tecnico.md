@@ -10,9 +10,6 @@
 
 ## 2. Diagrama da arquitetura implementada
 
-Diagrama publicado (capturar como imagem e colar na versão final em PDF):
-https://claude.ai/code/artifact/60c33868-63ff-4383-a444-90d59759ccfb
-
 Fluxo implementado:
 
 ```
